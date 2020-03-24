@@ -6,6 +6,8 @@ import com.nonstop.covid19.api.VirusServices;
 import org.junit.Test;
 import retrofit2.Response;
 
+import java.util.stream.Collectors;
+
 public class TestVirusService {
     @Test
     public void testToday() {
@@ -45,6 +47,20 @@ public class TestVirusService {
         VirusService service = VirusServices.create();
         try {
             service.country("China").execute().body()
+                    .forEach(System.out::println);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testAllCountryNames() {
+        VirusService service = VirusServices.create();
+        try {
+            service.allCountries().execute().body()
+                    .stream()
+                    .map(Day::getCountry)
+                    .collect(Collectors.toSet())
                     .forEach(System.out::println);
         } catch (Exception e) {
             e.printStackTrace();

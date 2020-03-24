@@ -37,7 +37,7 @@ List<Day> days = service.allDays().execute().body();
 List<Day> days = service.country("国家名").execute().body();
 ```
 
-## 获取所有国家自爆发以来的每日情况
+### 获取所有国家自爆发以来的每日情况
 ```java
 List<Day> days = service.allCountries().execute().body();
 ```

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Day {
+    private String country;
     private Date date;
     private int confirmed;
     private int deaths;
@@ -12,8 +13,13 @@ public class Day {
     @Override
     public String toString() {
         return String.format(Locale.getDefault(),
-                "%s { confirmed: %d, deaths: %d, recovered: %d }",
+                "%s %s { confirmed: %d, deaths: %d, recovered: %d }",
+                isGlobal() ? "Global" : getCountry(),
                 date.toString(), confirmed, deaths, recovered);
+    }
+
+    public String getCountry() {
+        return country;
     }
 
     public Date getDate() {
@@ -30,5 +36,9 @@ public class Day {
 
     public int getRecovered() {
         return recovered;
+    }
+
+    public boolean isGlobal() {
+        return getCountry() == null;
     }
 }

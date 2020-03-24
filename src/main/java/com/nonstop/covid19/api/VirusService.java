@@ -17,10 +17,10 @@ public interface VirusService {
     Call<List<Day>> allDays();
 
     @GET("countries")
-    Call<List<CountryDay>> allCountries();
+    Call<List<Day>> allCountries();
 
     @GET("countries")
-    Call<List<CountryDay>> country(@Query("filter[country]") String countryName);
+    Call<List<Day>> country(@Query("filter[country]") String countryName);
 
     String BASE_URL = "http://covid-19api.com/api/";
 

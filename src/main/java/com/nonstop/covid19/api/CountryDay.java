@@ -16,4 +16,24 @@ public class CountryDay {
                 "%s: %s { confirmed: %d, deaths: %d, recovered: %d }",
                 country, date.toString(), confirmed, deaths, recovered);
     }
+
+    public String getCountryName() {
+        return country;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public int getConfirmed() {
+        return confirmed;
+    }
+
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getRecovered() {
+        return recovered;
+    }
 }

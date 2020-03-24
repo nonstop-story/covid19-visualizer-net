@@ -15,4 +15,20 @@ public class Day {
                 "%s { confirmed: %d, deaths: %d, recovered: %d }",
                 date.toString(), confirmed, deaths, recovered);
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public int getConfirmed() {
+        return confirmed;
+    }
+
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getRecovered() {
+        return recovered;
+    }
 }
